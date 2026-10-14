@@ -1,26 +1,111 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sang</title>
-  <style>
-    body { font-family: Arial, sans-serif; background:#f5f0ff;
-           margin:0; text-align:center; color:#333; }
-    .box { max-width:480px; margin:auto; padding:40px 20px; }
-    h1 { margin-bottom:5px; }
-    p { line-height:1.6; }
-    a.btn { display:block; background:#7c5cff; color:#fff;
-            padding:14px; margin:12px 0; border-radius:10px;
-            text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sang | Trang cá nhân</title>
+<style>
+:root{--bg:#f7f4ff;--card:#fff;--text:#2b2b3a;--main:#7c5cff;--soft:#ece6ff}
+body.dark{--bg:#14121f;--card:#1f1c30;--text:#e9e6f5;--main:#a48dff;--soft:#2a2645}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+header{position:sticky;top:0;background:var(--card);box-shadow:0 2px 8px #0002;z-index:10}
+nav{max-width:900px;margin:auto;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:10px 16px}
+nav a{color:var(--text);text-decoration:none;padding:6px 12px;border-radius:20px}
+nav a:hover{background:var(--soft)}
+nav button{margin-left:auto;border:0;background:var(--soft);color:var(--text);padding:6px 12px;border-radius:20px;cursor:pointer}
+main{max-width:900px;margin:auto;padding:0 16px 60px}
+section{padding-top:50px}
+h2{color:var(--main)}
+.hero{text-align:center}
+.hero img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--main)}
+.card{background:var(--card);padding:18px 20px;border-radius:14px;margin:14px 0;box-shadow:0 2px 8px #0001}
+.card small{opacity:.6}
+.tags span{display:inline-block;background:var(--soft);padding:4px 12px;border-radius:20px;margin:4px 4px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.grid img{width:100%;height:200px;object-fit:cover;border-radius:12px}
+a.btn{display:inline-block;background:var(--main);color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;margin:6px 6px 0 0}
+footer{text-align:center;padding:20px;opacity:.7}
+</style>
 </head>
 <body>
-  <div class="box">
-    <h1>Sang</h1>
-    <p>Xin chào, đây là góc nhỏ của mình.</p>
-    <a class="btn" href="https://tiktok.com/@tenban">TikTok của mình</a>
-    <a class="btn" href="mailto:email@gmail.com">Liên hệ</a>
+
+<header>
+  <nav>
+    <a href="#gioithieu">Giới thiệu</a>
+    <a href="#sothich">Sở thích</a>
+    <a href="#baiviet">Bài viết</a>
+    <a href="#anh">Ảnh</a>
+    <a href="#lienket">Liên kết</a>
+    <button onclick="document.body.classList.toggle('dark')">🌙 Sáng/Tối</button>
+  </nav>
+</header>
+
+<main>
+
+<section id="gioithieu" class="hero">
+  <img src="avatar.jpg" alt="Ảnh đại diện" onerror="this.style.display='none'">
+  <h1>Sang</h1>
+  <p>Sinh viên · Người làm nội dung · Thích viết về những điều nhỏ bé</p>
+  <div class="card" style="text-align:left">
+    <p>Viết 3–5 câu giới thiệu về bản thân ở đây: bạn là ai, bạn đang học gì, bạn làm gì, và bạn muốn người xem tìm thấy điều gì ở trang này.</p>
   </div>
+</section>
+
+<section id="sothich">
+  <h2>Sở thích</h2>
+  <div class="tags">
+    <span>🎧 Âm nhạc</span>
+    <span>📚 Đọc sách</span>
+    <span>🎬 Làm video</span>
+    <span>✍️ Viết lách</span>
+  </div>
+  <div class="card">
+    <h3>Sở thích số 1</h3>
+    <p>Kể vì sao bạn thích nó, bắt đầu từ khi nào.</p>
+  </div>
+  <div class="card">
+    <h3>Sở thích số 2</h3>
+    <p>Chia sẻ thêm những điều bạn yêu thích.</p>
+  </div>
+</section>
+
+<section id="baiviet">
+  <h2>Bài viết</h2>
+
+  <div class="card">
+    <small>14/10/2026</small>
+    <h3>Tiêu đề bài viết mới nhất</h3>
+    <p>Nội dung bài viết viết ở đây. Bạn có thể viết dài bao nhiêu tùy ý.</p>
+  </div>
+
+  <div class="card">
+    <small>10/10/2026</small>
+    <h3>Tiêu đề bài viết thứ hai</h3>
+    <p>Nội dung bài viết thứ hai.</p>
+  </div>
+</section>
+
+<section id="anh">
+  <h2>Thư viện ảnh</h2>
+  <div class="grid">
+    <img src="anh1.jpg" alt="Ảnh 1" onerror="this.style.display='none'">
+    <img src="anh2.jpg" alt="Ảnh 2" onerror="this.style.display='none'">
+    <img src="anh3.jpg" alt="Ảnh 3" onerror="this.style.display='none'">
+  </div>
+</section>
+
+<section id="lienket">
+  <h2>Liên kết</h2>
+  <a class="btn" href="https://tiktok.com/@tenban">TikTok</a>
+  <a class="btn" href="https://facebook.com/tenban">Facebook</a>
+  <a class="btn" href="mailto:email@gmail.com">Email</a>
+</section>
+
+</main>
+
+<footer>© 2026 Sang · Làm bằng GitHub Pages</footer>
+
 </body>
 </html>
