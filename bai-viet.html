@@ -1,0 +1,23 @@
+---
+layout: default
+title: Bài viết
+permalink: /bai-viet/
+---
+<div class="page">
+  <h1 class="title">Bài viết</h1>
+  <p class="sub">Những điều mình viết và chia sẻ</p>
+
+  <input id="search" type="search" placeholder="🔍 Tìm bài viết...">
+
+  <div class="filter">
+    <button class="on" data-f="all">Tất cả</button>
+    {% assign topics = site.posts | map: "topic" | uniq %}
+    {% for t in topics %}{% if t %}<button data-f="{{ t | escape }}">{{ t }}</button>{% endif %}{% endfor %}
+  </div>
+
+  <div class="cards">
+    {% for post in site.posts %}
+      {% include post-card.html p=post %}
+    {% endfor %}
+  </div>
+</div>
