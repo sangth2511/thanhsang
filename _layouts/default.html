@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo grad" href="{{ '/' | relative_url }}">{{ site.title }}.</a>
+    <button id="burger" aria-label="Menu">☰</button>
+    <nav id="menu">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="on"{% endif %}>Trang chủ</a>
+      <a href="{{ '/bai-viet/' | relative_url }}" {% if page.url contains '/bai-viet' %}class="on"{% endif %}>Bài viết</a>
+      <a href="{{ '/hinh-anh/' | relative_url }}" {% if page.url contains '/hinh-anh' %}class="on"{% endif %}>Hình ảnh</a>
+      <a href="{{ '/video/' | relative_url }}" {% if page.url contains '/video' %}class="on"{% endif %}>Video</a>
+      <a href="#lienhe">Liên hệ</a>
+      <button id="theme" aria-label="Đổi giao diện sáng tối">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer id="lienhe">
+  <div class="wrap">
+    <h3>Liên hệ</h3>
+    <p>Hợp tác, góp ý hoặc chỉ muốn trò chuyện, cứ nhắn cho mình nhé.</p>
+    <div class="social">
+      {% if site.email %}<a class="btn" href="mailto:{{ site.email }}">✉️ Email</a>{% endif %}
+      {% if site.tiktok %}<a class="btn line" href="{{ site.tiktok }}" target="_blank" rel="noopener">TikTok</a>{% endif %}
+      {% if site.instagram %}<a class="btn line" href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {% if site.youtube %}<a class="btn line" href="{{ site.youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+      {% if site.facebook %}<a class="btn line" href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+    </div>
+    <small>© {{ 'now' | date: '%Y' }} {{ site.author }}</small>
+  </div>
+</footer>
+
+<div id="lb"><img id="lbimg" alt=""></div>
+<script src="{{ '/assets/script.js' | relative_url }}"></script>
+</body>
+</html>
