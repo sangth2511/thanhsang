@@ -1,0 +1,19 @@
+title: Sang
+author: Sang
+description: Trang cá nhân của Sang - bài viết, hình ảnh và video
+lang: vi
+timezone: Asia/Ho_Chi_Minh
+permalink: /bai-viet/:title/
+
+email: email@gmail.com
+tiktok: https://tiktok.com/@tenban
+instagram: https://instagram.com/tenban
+youtube: https://youtube.com/@tenban
+facebook: https://facebook.com/tenban
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
