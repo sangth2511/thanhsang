@@ -1,0 +1,8 @@
+<a class="card item" href="{{ include.p.url | relative_url }}" data-t="{{ include.p.topic | escape }}" data-s="{{ include.p.title | downcase | escape }} {{ include.p.excerpt | strip_html | strip_newlines | downcase | escape }}">
+  {% if include.p.image %}<img src="{{ include.p.image | relative_url }}" alt="" loading="lazy">{% endif %}
+  <div class="body">
+    <small>{{ include.p.date | date: "%d/%m/%Y" }}{% if include.p.topic %} · {{ include.p.topic }}{% endif %}</small>
+    <h3>{{ include.p.title }}</h3>
+    <p>{{ include.p.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+  </div>
+</a>
