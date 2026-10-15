@@ -1,141 +1,31 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sang | Người sáng tạo nội dung</title>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0e0b1a;--card:#1a1530;--line:#2c2550;--text:#f4f1ff;--muted:#a9a4c9;--a:#ff5fa2;--b:#7c5cff}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Be Vietnam Pro',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;
-  background-image:radial-gradient(circle at 15% 0%,#3a1f6b55,transparent 45%),radial-gradient(circle at 90% 30%,#ff5fa233,transparent 40%)}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:720px;margin:auto;padding:0 20px}
-.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-.reveal{opacity:0;transform:translateY(28px);transition:all .8s}
-.reveal.show{opacity:1;transform:none}
-/* Hero */
-.hero{text-align:center;padding:70px 0 30px}
-.ring{width:150px;height:150px;margin:0 auto 18px;border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--a),var(--b))}
-.ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--card);display:block}
-.hero h1{font-size:clamp(34px,8vw,52px);line-height:1.15}
-.hero p{color:var(--muted);margin:10px auto 22px;max-width:480px}
-.links{display:flex;flex-direction:column;gap:12px}
-.link{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-radius:16px;
-  background:var(--card);border:1px solid var(--line);font-weight:500;transition:.25s}
-.link:hover{transform:translateY(-3px) scale(1.01);border-color:var(--a);box-shadow:0 8px 25px #ff5fa222}
-.link.main{background:linear-gradient(90deg,var(--a),var(--b));border:0}
-/* Sections */
-section{padding:50px 0 0}
-h2{font-size:26px;margin-bottom:6px}
-.sub{color:var(--muted);margin-bottom:20px}
-.chips span{display:inline-block;padding:7px 16px;margin:0 8px 10px 0;border-radius:30px;background:var(--card);border:1px solid var(--line);font-size:15px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
-.stat b{font-size:28px;display:block}
-.stat span{color:var(--muted);font-size:13px}
-/* Video cards */
-.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.vid{border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:.25s}
-.vid:hover{transform:translateY(-5px)}
-.thumb{aspect-ratio:9/12;background:linear-gradient(160deg,var(--b),var(--a));display:flex;align-items:center;justify-content:center;font-size:42px;position:relative}
-.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.vid div.t{padding:12px 14px;font-size:15px}
-.vid small{color:var(--muted)}
-/* Collab */
-.collab{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.collab div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;font-weight:700;color:var(--muted)}
-/* Contact */
-.contact{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px 20px}
-.btn{display:inline-block;margin:10px 6px 0;padding:12px 24px;border-radius:30px;border:0;cursor:pointer;font:inherit;font-weight:500;color:#fff;
-  background:linear-gradient(90deg,var(--a),var(--b))}
-.btn.line{background:transparent;border:1px solid var(--line)}
-footer{text-align:center;color:var(--muted);padding:40px 0 30px;font-size:14px}
-</style>
-</head>
-<body>
-<div class="wrap">
+---
+layout: default
+---
+<div class="page">
 
-<!-- HERO -->
-<div class="hero reveal">
-  <div class="ring"><img src="avatar.jpg" alt="Sang" onerror="this.style.visibility='hidden'"></div>
-  <h1>Mình là <span class="grad">Sang</span></h1>
-  <p>Người sáng tạo nội dung · Sinh viên. Viết 1–2 câu giới thiệu ngắn gọn của bạn ở đây.</p>
-  <div class="links">
-    <a class="link main" href="https://tiktok.com/@tenban" target="_blank">🎵 TikTok của mình <span>→</span></a>
-    <a class="link" href="https://instagram.com/tenban" target="_blank">📷 Instagram <span>→</span></a>
-    <a class="link" href="https://youtube.com/@tenban" target="_blank">▶️ YouTube <span>→</span></a>
-    <a class="link" href="#lienhe">✉️ Liên hệ hợp tác <span>→</span></a>
+  <div class="hero">
+    <div class="ring"><img src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="{{ site.author }}" onerror="this.style.display='none'"></div>
+    <h1>Xin chào, mình là <span class="grad">{{ site.author }}</span></h1>
+    <p>Sinh viên · Người sáng tạo nội dung. Viết 1–2 câu giới thiệu ngắn gọn về bạn ở đây.</p>
+    <a class="btn" href="{{ '/bai-viet/' | relative_url }}">Đọc bài viết</a>
+    <a class="btn line" href="{{ '/video/' | relative_url }}">Xem video</a>
   </div>
+
+  <div class="sec-head"><h2>Bài viết mới</h2><a href="{{ '/bai-viet/' | relative_url }}">Xem tất cả →</a></div>
+  <div class="cards">
+    {% for post in site.posts limit:3 %}
+      {% include post-card.html p=post %}
+    {% endfor %}
+  </div>
+
+  <div class="sec-head"><h2>Hình ảnh</h2><a href="{{ '/hinh-anh/' | relative_url }}">Xem tất cả →</a></div>
+  <div class="gallery">
+    {% for ph in site.data.photos limit:6 %}
+      <figure><img src="{{ '/assets/img/' | append: ph.file | relative_url }}" alt="{{ ph.title | escape }}" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
+    {% endfor %}
+  </div>
+
+  <div class="sec-head"><h2>Video</h2><a href="{{ '/video/' | relative_url }}">Xem tất cả →</a></div>
+  <p class="sub">Các video mới nhất nằm ở trang Video.</p>
+
 </div>
-
-<!-- ABOUT -->
-<section class="reveal">
-  <h2>Về mình</h2>
-  <p class="sub">Mình làm gì và mình giỏi điều gì</p>
-  <p style="margin-bottom:16px">Viết 3–4 câu về hành trình của bạn: bắt đầu làm nội dung từ khi nào, bạn muốn chia sẻ điều gì, và người xem nhận được gì từ bạn.</p>
-  <div class="chips">
-    <span>✍️ Viết nội dung</span><span>🎬 Dựng video</span><span>🎙️ Lồng tiếng</span><span>🎨 Thiết kế</span><span>📚 Sinh viên</span>
-  </div>
-  <div class="stats">
-    <div class="stat"><b class="grad">10K</b><span>Người theo dõi</span></div>
-    <div class="stat"><b class="grad">50+</b><span>Video</span></div>
-    <div class="stat"><b class="grad">3</b><span>Năm làm nội dung</span></div>
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section class="reveal">
-  <h2>Nội dung nổi bật</h2>
-  <p class="sub">Bấm để xem trên TikTok</p>
-  <div class="vids">
-    <a class="vid" href="https://tiktok.com/@tenban/video/1" target="_blank">
-      <div class="thumb">▶<img src="video1.jpg" alt="" onerror="this.style.display='none'"></div>
-      <div class="t">Tên video 1<br><small>1,2M lượt xem</small></div>
-    </a>
-    <a class="vid" href="https://tiktok.com/@tenban/video/2" target="_blank">
-      <div class="thumb">▶<img src="video2.jpg" alt="" onerror="this.style.display='none'"></div>
-      <div class="t">Tên video 2<br><small>300K lượt xem</small></div>
-    </a>
-    <a class="vid" href="https://tiktok.com/@tenban/video/3" target="_blank">
-      <div class="thumb">▶<img src="video3.jpg" alt="" onerror="this.style.display='none'"></div>
-      <div class="t">Tên video 3<br><small>150K lượt xem</small></div>
-    </a>
-  </div>
-</section>
-
-<!-- COLLAB -->
-<section class="reveal">
-  <h2>Hợp tác</h2>
-  <p class="sub">Các dự án mình từng tham gia</p>
-  <div class="collab">
-    <div>Thương hiệu A</div><div>Thương hiệu B</div><div>Dự án C</div><div>Sự kiện D</div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="lienhe" class="reveal">
-  <div class="contact">
-    <h2>Cùng làm việc nhé?</h2>
-    <p class="sub">Hợp tác, đặt nội dung hoặc chỉ muốn trò chuyện</p>
-    <a class="btn" href="mailto:email@gmail.com">Gửi email</a>
-    <button class="btn line" id="copy">Sao chép email</button>
-  </div>
-</section>
-
-<footer>© 2026 Sang</footer>
-</div>
-
-<script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-document.getElementById('copy').onclick=function(){
-  navigator.clipboard.writeText('email@gmail.com');
-  this.textContent='Đã sao chép ✓';
-  setTimeout(()=>this.textContent='Sao chép email',2000);
-};
-</script>
-</body>
-</html>
